@@ -1,0 +1,180 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- Custom CSS Variables (Theme Colors) --- */
+:root {
+    --primary-color: #0d6efd; /* Blue */
+    --primary-hover: #0b5ed7;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --text-color: #495057;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+/* --- General Body & Typography --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+/* --- Navbar Customization --- */
+.navbar {
+    background-color: #212529 !important; /* Always solid dark */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+
+.navbar .nav-link {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    background-color: #343a40; /* Slightly lighter dark */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.dropdown-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+}
+/* --- Hero Section (Homepage) --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 123, 255, 0.3);
+}
+
+
+.event-card {
+    overflow: hidden; /* Important for the overlay effect */
+}
+
+.event-card .card-img-container {
+    position: relative;
+    height: 250px;
+}
+
+.event-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.event-card:hover .card-img-top {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.event-card .card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.25rem;
+    color: white;
+}
+
+.event-card .card-overlay-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: white; /* Ensure title is white */
+}
+
+.event-card .card-overlay-text {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.event-card .card-body {
+    padding: 1.5rem;
+}
+
+/* --- Forms --- */
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary-color);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--dark-color);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* Add this to prevent content from hiding behind the sticky navbar */
+.main-content {
+    padding-top: 80px; /* Adjust this value if your navbar height changes */
+}
